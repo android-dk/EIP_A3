@@ -8,37 +8,45 @@ Accuracy on test data is: 82.19
 model = Sequential()
 
 model.add(SeparableConvolution2D(32, 3, 3, border_mode='same', input_shape=(32, 32, 3))) # Output dim : 32 x 32 x 32 ; Receptive field : 3 x 3
+
 model.add(Activation('relu'))
 model.add(BatchNormalization())
 model.add(Dropout(0.1))
 
 model.add(SeparableConvolution2D(64, 3, 3)) # Output dim : 30 x 30 x 64 ; Receptive Field : 5 x 5
+
 model.add(Activation('relu'))
 model.add(BatchNormalization())
 model.add(Dropout(0.1))
 
 model.add(MaxPooling2D(pool_size=(2, 2))) # Output dim : 15 x 15 x 64 ; Receptive Field : 5 x 5
+
 model.add(Dropout(0.1))
 
 model.add(SeparableConvolution2D(128, 3, 3, border_mode='same')) # Output dim : 15 x 15 x 128 ; Receptive Field : 7 x 7 
+
 model.add(Activation('relu'))
 model.add(BatchNormalization())
 model.add(Dropout(0.1))
 
 model.add(SeparableConvolution2D(128, 3, 3)) # Output dim : 13 x 13 x 128 ; Receptive Field : 9 x 9
+
 model.add(Activation('relu'))
 model.add(BatchNormalization())
 model.add(Dropout(0.1))
 
 model.add(MaxPooling2D(pool_size=(2, 2))) # Output dim : 6 x 6 x 128 ; Receptive Field : 9 x 9 
+
 model.add(Dropout(0.1))
 
 model.add(SeparableConvolution2D(192, 3, 3, border_mode='same')) # Output dim : 6 x 6 x 192 ; Receptive Field : 11 x 11
+
 model.add(Activation('relu'))
 model.add(BatchNormalization())
 model.add(Dropout(0.1))
 
 model.add(SeparableConvolution2D(192, 3, 3)) # Output dim : 4 x 4 x 192 ; Receptive Field : 13 x 13
+
 model.add(Activation('relu'))
 model.add(BatchNormalization())
 model.add(Dropout(0.1))
