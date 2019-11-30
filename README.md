@@ -23,11 +23,11 @@ model.add(BatchNormalization())
 
 model.add(Dropout(0.1))
 
-model.add(MaxPooling2D(pool_size=(2, 2))) # Output dim : 15 x 15 x 64 ; Receptive Field : 5 x 5
+model.add(MaxPooling2D(pool_size=(2, 2))) # Output dim : 15 x 15 x 64 ; Receptive Field : 6 x 6
 
 model.add(Dropout(0.1))
 
-model.add(SeparableConvolution2D(128, 3, 3, border_mode='same')) # Output dim : 15 x 15 x 128 ; Receptive Field : 7 x 7 
+model.add(SeparableConvolution2D(128, 3, 3, border_mode='same')) # Output dim : 15 x 15 x 128 ; Receptive Field : 10 x 10
 
 model.add(Activation('relu'))
 
@@ -35,7 +35,7 @@ model.add(BatchNormalization())
 
 model.add(Dropout(0.1))
 
-model.add(SeparableConvolution2D(128, 3, 3)) # Output dim : 13 x 13 x 128 ; Receptive Field : 9 x 9
+model.add(SeparableConvolution2D(128, 3, 3)) # Output dim : 13 x 13 x 128 ; Receptive Field : 14 x 14
 
 model.add(Activation('relu'))
 
@@ -43,11 +43,11 @@ model.add(BatchNormalization())
 
 model.add(Dropout(0.1))
 
-model.add(MaxPooling2D(pool_size=(2, 2))) # Output dim : 6 x 6 x 128 ; Receptive Field : 9 x 9 
+model.add(MaxPooling2D(pool_size=(2, 2))) # Output dim : 6 x 6 x 128 ; Receptive Field : 16 x 16
 
 model.add(Dropout(0.1))
 
-model.add(SeparableConvolution2D(192, 3, 3, border_mode='same')) # Output dim : 6 x 6 x 192 ; Receptive Field : 11 x 11
+model.add(SeparableConvolution2D(192, 3, 3, border_mode='same')) # Output dim : 6 x 6 x 192 ; Receptive Field : 24 x 24
 
 model.add(Activation('relu'))
 
@@ -55,7 +55,7 @@ model.add(BatchNormalization())
 
 model.add(Dropout(0.1))
 
-model.add(SeparableConvolution2D(192, 3, 3)) # Output dim : 4 x 4 x 192 ; Receptive Field : 13 x 13
+model.add(SeparableConvolution2D(192, 3, 3)) # Output dim : 4 x 4 x 192 ; Receptive Field : 32 x 32
 
 model.add(Activation('relu'))
 
@@ -63,7 +63,7 @@ model.add(BatchNormalization())
 
 model.add(Dropout(0.1))
 
-model.add(AveragePooling2D(pool_size=(4, 4))) # Output dim : 1 x 1 x 192
+model.add(AveragePooling2D(pool_size=(4, 4))) # Output dim : 1 x 1 x 192 ; Receptive Field : 44 x 44
 
 model.add(Flatten())
 
