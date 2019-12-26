@@ -277,4 +277,3 @@ Model took 2126.97 seconds to train
 
 Accuracy on test data is: 84.24
 
-## Team Members : Dinesh Kesaboina, Abhiraj Gupta Vinnakota
